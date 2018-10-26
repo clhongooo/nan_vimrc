@@ -95,3 +95,57 @@ set foldcolumn=1
 
 " Enable syntax hignlighting.
 syntax enable
+
+" Auto insert head title
+autocmd BufNewFile *.c,*.cpp,*.sh,*.cc exec ":call SetTitle()"
+func SetTitle() 
+	if &filetype == 'sh' 
+		call setline(1,"\#########################################################################") 
+		call append(line("."), "\# File Name: ".expand("%")) 
+		call append(line(".")+1, "\# Author: clhongooo") 
+		call append(line(".")+2, "\# mail: clhongooo@163.com") 
+		call append(line(".")+3, "\# Created Time: ".strftime("%c")) 
+		call append(line(".")+4, "\#########################################################################") 
+		call append(line(".")+5, "\#!/bin/bash") 
+		call append(line(".")+6, "") 
+	else 
+		call setline(1, "/*************************************************************************") 
+		call append(line("."), "	> File Name: ".expand("%")) 
+		call append(line(".")+1, "	> Author: clhongooo") 
+		call append(line(".")+2, "	> Mail: clhongooo@163.com ") 
+		call append(line(".")+3, "	> Created Time: ".strftime("%c")) 
+		call append(line(".")+4, " ************************************************************************/") 
+		call append(line(".")+5, "")
+	endif
+	if &filetype == 'cpp'
+		call append(line(".")+6, "#include<iostream>")
+		call append(line(".")+7, "using namespace std;")
+		call append(line(".")+8, "")
+	endif
+	if &filetype == 'c'
+		call append(line(".")+6, "#include<stdio.h>")
+		call append(line(".")+7, "")
+	endif
+	if &filetype == 'cc'
+        call append(line(".")+6, "#include<iostream>")
+        call append(line(".")+7, "using namespace std;")
+        call append(line(".")+8, "")
+    endif
+    autocmd BufNewFile * normal G
+endfunc
+
+autocmd BufNewFile *.{h,hpp} exec ":call SetHeadFileTitle()" 
+func SetHeadFileTitle()
+	call setline(1,"/***************************************************************************")
+	call append(line("."), "	> File Name: ".expand("%")) 
+	call append(line(".")+1, "	> Author: clhongooo") 
+	call append(line(".")+2, "	> Mail: clhongooo@163.com") 
+	call append(line(".")+3, "	> Created Time: ".strftime("%c")) 
+	call append(line(".")+4, " ************************************************************************/") 
+	call append(line(".")+5, "#ifndef ".substitute(toupper(expand("%")),"\\.","_","g")."_")
+	call append(line(".")+6, "#define ".substitute(toupper(expand("%")),"\\.","_","g")."_")
+	call append(line(".")+7, "")
+	call append(line(".")+8, "#endif//".substitute(toupper(expand("%")),"\\.","_","g")."_")
+	autocmd BufNewFile * normal G
+endfunc
+

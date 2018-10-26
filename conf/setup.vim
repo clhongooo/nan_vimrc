@@ -44,6 +44,9 @@ Plugin 'rosenfeld/conque-term'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
 
+Plugin 'git://github.com/plasticboy/vim-markdown.git'
+Plugin 'git://github.com/yegappan/grep.git'
+
 call vundle#end()
 
 filetype plugin indent on

@@ -55,7 +55,7 @@ set softtabstop=4
 set shiftwidth=4
 set smarttab
 " Tab length on specific file types.
-autocmd FileType c,cpp set shiftwidth=2 | set tabstop=2 | set softtabstop=2
+autocmd FileType c,cpp set shiftwidth=4 | set tabstop=4 | set softtabstop=4
 
 " Linebreak
 set lbr

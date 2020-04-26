@@ -139,6 +139,11 @@ inoremap <C-b> <C-o>:call <SID>PointToRegister()<CR>
 inoremap <C-p> <C-o>:call <SID>JumpToRegister()<CR>
 inoremap <C-x>m <C-o>:marks<CR>
 
+" markdown-preview 
+nmap <silent> <F8> <Plug>MarkdownPreview        " for normal mode
+imap <silent> <F8> <Plug>MarkdownPreview        " for insert mode
+nmap <silent> <F9> <Plug>StopMarkdownPreview    " for normal mode
+imap <silent> <F9> <Plug>StopMarkdownPreview    " for insert mode
 
 """""""""""""""""""""
 "  Help functions.  "

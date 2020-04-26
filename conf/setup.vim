@@ -45,6 +45,8 @@ Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
 Plugin 'pboettch/vim-cmake-syntax'
 
+
+Plugin 'git://github.com/plasticboy/vim-markdown.git'
 Plugin 'git://github.com/yegappan/grep.git'
 
 call vundle#end()

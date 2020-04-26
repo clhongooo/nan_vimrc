@@ -7,7 +7,7 @@ if !has('gui_running')
 endif
 syntax enable
 set background=dark
-colorscheme solarized
+" colorscheme solarized
 let g:solarized_termcolors=256
 let g:lightline = {
     \ 'colorscheme': 'solarized',
@@ -22,8 +22,8 @@ let g:lightline = {
 set noshowmode
 
 " Highlight the 80th column for length limitation.
-set colorcolumn=80
-highlight colorcolumn ctermbg=DarkRed
+" set colorcolumn=80
+" highlight colorcolumn ctermbg=DarkRed
 
 """""""""""""""""""""""""""""""""
 " Config vim-move

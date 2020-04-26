@@ -95,3 +95,14 @@ set foldcolumn=1
 
 " Enable syntax hignlighting.
 syntax enable
+
+" Sample mapping
+nmap xd :q<return>
+nmap xs :w<return>
+nmap xv :vsp<return>
+nmap xh :sp<return>
+nmap xe :Ex<return>
+nmap xll <C-W><C-L>
+nmap xjj <C-W><C-J>
+nmap xhh <C-W><C-H>
+nmap xkk <C-W><C-K>

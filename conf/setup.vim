@@ -43,6 +43,9 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'rosenfeld/conque-term'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
+Plugin 'pboettch/vim-cmake-syntax'
+
+Plugin 'git://github.com/yegappan/grep.git'
 
 call vundle#end()
 

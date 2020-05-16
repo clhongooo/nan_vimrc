@@ -6,8 +6,8 @@ if !has('gui_running')
     set t_Co=256
 endif
 syntax enable
-set background=dark
-colorscheme desert
+ set background=dark
+" colorscheme solarized
 let g:solarized_termcolors=256
 let g:lightline = {
     \ 'colorscheme': 'solarized',
@@ -76,8 +76,6 @@ let g:NERDTreeIgnore=['\.pyc$', '\.pyo$', '__pycache__']
 let g:NERDTreeWinSize=35
 let g:NERDTreeDirArrowExpandable='>'
 let g:NERDTreeDirArrowCollapsible='v'
-
-"autocmd VimEnter * NERDTree 
 
 """""""""""""""""""""""""""""""""
 " Config nerdcommenter
@@ -252,7 +250,11 @@ let g:ycm_key_invoke_completion = '<C-a>'
 let g:ycm_key_list_select_completion = ['<Down>']
 let g:ycm_key_list_previous_completion = ['<Up>']
 "let g:ycm_server_python_interpreter = ''
-nnoremap <leader>. :YcmCompleter GoTo<CR>
+let mapleder = ","
+nnoremap <leader>j :YcmCompleter GoTo<CR>
+nnoremap <leader>u :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>i :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>o :YcmCompleter GoToInclude<CR>
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 
 
@@ -278,7 +280,5 @@ noremap <C-l> :Tabularize /
 """""""""""""""""""""""
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
-"""""""""""""""""""""""
-" Config markdown-preview
-"""""""""""""""""""""""
+
 
